@@ -2,7 +2,7 @@
   "id": "FEAT-002",
   "type": "feat",
   "description": "Implement the Landing page (Home), About Kiro page, Features page, and Why Kiro page. These are the core informational pages that introduce visitors to Kiro.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "Replace app/page.tsx with the Landing/Home page: Hero section with headline about Kiro's value proposition, subheading, primary CTA ('Get Started'/'Install Kiro'), secondary CTA ('Learn More'), animated visual element (code snippet preview or abstract animation using framer-motion). Below the fold: key features preview grid (3-4 feature cards with icons from lucide-react), testimonial/social proof section placeholder, final CTA section. Use semantic HTML (<section>, <article>). Dark-first styling with glassmorphism card accents, large typography, smooth scroll animations.",
     "Create app/about/page.tsx: Introduction to Kiro as an AI-powered development assistant, vision statement section, philosophy of specification-driven development, how it differs from chatbots. Use sections with motion animations on scroll. Include metadata export.",
@@ -24,5 +24,5 @@
     "Run npm run lint and confirm no lint errors"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "Used server component page files that export metadata with separate 'use client' content components to satisfy Next.js constraint that client components cannot export metadata. The framer-motion ease property requires 'as const' assertion to satisfy TypeScript strict typing. All 4 routes build and lint successfully as static pages."
 }
