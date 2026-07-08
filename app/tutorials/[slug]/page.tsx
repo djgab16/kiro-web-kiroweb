@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { TutorialDetailContent } from "../../components/TutorialDetailContent";
 
 const tutorials: Record<string, string> = {
@@ -32,7 +33,11 @@ export default async function TutorialDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const title = tutorials[slug] || "Tutorial";
+  const title = tutorials[slug];
+
+  if (!title) {
+    notFound();
+  }
 
   return <TutorialDetailContent title={title} />;
 }

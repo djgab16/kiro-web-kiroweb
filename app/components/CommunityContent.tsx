@@ -121,12 +121,23 @@ export function CommunityContent() {
                 <p className="mt-3 flex-1 text-sm text-muted leading-relaxed">
                   {item.description}
                 </p>
-                <a
-                  href={item.ctaHref}
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-accent bg-accent/10 px-4 py-2.5 text-sm font-medium text-accent transition-all hover:bg-accent/20"
-                >
-                  {item.cta}
-                </a>
+                {item.ctaHref === "#" ? (
+                  <span
+                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-muted cursor-default"
+                  >
+                    {item.cta}
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">Coming Soon</span>
+                  </span>
+                ) : (
+                  <a
+                    href={item.ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-accent bg-accent/10 px-4 py-2.5 text-sm font-medium text-accent transition-all hover:bg-accent/20"
+                  >
+                    {item.cta}
+                  </a>
+                )}
               </motion.article>
             ))}
           </motion.div>

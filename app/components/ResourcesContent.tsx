@@ -258,15 +258,21 @@ export function ResourcesContent() {
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                     {resource.description}
                   </p>
-                  <a
-                    href={resource.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-                  >
-                    View Resource
-                    <ExternalLink size={14} />
-                  </a>
+                  {resource.href === "#" ? (
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-muted cursor-default">
+                      Coming Soon
+                    </span>
+                  ) : (
+                    <a
+                      href={resource.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                    >
+                      View Resource
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                 </motion.article>
               );
             })}

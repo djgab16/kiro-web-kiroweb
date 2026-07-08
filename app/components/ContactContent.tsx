@@ -298,7 +298,7 @@ export function ContactContent() {
               >
                 <CheckCircle size={20} />
                 <span className="text-sm font-medium">
-                  Message sent successfully!
+                  Thanks! This form is not yet connected to a backend. In a future version, your message will be sent.
                 </span>
               </motion.div>
             )}
