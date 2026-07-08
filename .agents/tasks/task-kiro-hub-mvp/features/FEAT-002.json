@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Implement the Landing page (Home), About Kiro page, Features page, and Why Kiro page. These are the core informational pages that introduce visitors to Kiro.",
+  "status": "in_progress",
+  "steps": [
+    "Replace app/page.tsx with the Landing/Home page: Hero section with headline about Kiro's value proposition, subheading, primary CTA ('Get Started'/'Install Kiro'), secondary CTA ('Learn More'), animated visual element (code snippet preview or abstract animation using framer-motion). Below the fold: key features preview grid (3-4 feature cards with icons from lucide-react), testimonial/social proof section placeholder, final CTA section. Use semantic HTML (<section>, <article>). Dark-first styling with glassmorphism card accents, large typography, smooth scroll animations.",
+    "Create app/about/page.tsx: Introduction to Kiro as an AI-powered development assistant, vision statement section, philosophy of specification-driven development, how it differs from chatbots. Use sections with motion animations on scroll. Include metadata export.",
+    "Create app/features/page.tsx: Display 9 Kiro capabilities in a responsive grid of feature cards. Each card has: icon (lucide-react), title, description (2-3 sentences). The 9 features based on Kiro's actual capabilities: 1) Specification-Driven Development, 2) Automated Task Planning, 3) AI-Powered Code Generation, 4) Intelligent Testing, 5) Pull Request Automation, 6) Context-Aware Assistance, 7) Multi-file Editing, 8) Natural Language Commands, 9) Continuous Learning. Animated card reveals on scroll. Include metadata export.",
+    "Create app/why-kiro/page.tsx: Comparison section showing Kiro vs Traditional Coding vs AI Chatbots vs Other AI IDEs. Use a responsive comparison table on desktop that converts to cards on mobile. Highlight differentiators: spec-driven workflow, full lifecycle coverage, context awareness, structured output. Each differentiator maps to a concrete capability. Include metadata export."
+  ],
+  "acceptance_criteria": [
+    "npm run build succeeds with all 4 pages",
+    "Home page has hero with headline, subheading, 2 CTAs visible above the fold",
+    "Home page has a visual/animated element in the hero",
+    "About page explains what Kiro is with vision and philosophy sections",
+    "Features page displays 9 capability cards in a responsive grid",
+    "Why Kiro page has a structured comparison (table on desktop, cards on mobile)",
+    "All pages use semantic HTML sections and responsive Tailwind classes",
+    "All pages export metadata for SEO"
+  ],
+  "verification": [
+    "Run npm run build and confirm it completes without errors",
+    "Run npm run lint and confirm no lint errors"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
