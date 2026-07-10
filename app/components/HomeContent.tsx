@@ -3,35 +3,36 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
+  ClipboardList,
+  Brain,
+  FlaskConical,
+  GitPullRequest,
   Sparkles,
-  Zap,
-  Code2,
-  GitBranch,
   ArrowRight,
   Terminal,
 } from "lucide-react";
 
 const featurePreview = [
   {
-    icon: Sparkles,
+    icon: ClipboardList,
     title: "Specification-Driven",
     description:
       "Turn natural language specs into structured development plans automatically.",
   },
   {
-    icon: Zap,
+    icon: Brain,
     title: "AI-Powered Generation",
     description:
       "Generate production-ready code across multiple files with full context awareness.",
   },
   {
-    icon: Code2,
+    icon: FlaskConical,
     title: "Intelligent Testing",
     description:
       "Auto-generate comprehensive test suites that match your codebase patterns.",
   },
   {
-    icon: GitBranch,
+    icon: GitPullRequest,
     title: "PR Automation",
     description:
       "From code changes to pull requests, automate the entire review workflow.",
