@@ -98,7 +98,7 @@ export function HomeContent() {
             custom={1}
           >
             Build software with
-            <span className="block text-accent">specification-driven AI</span>
+            <span className="block bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">specification-driven AI</span>
           </motion.h1>
 
           <motion.p
