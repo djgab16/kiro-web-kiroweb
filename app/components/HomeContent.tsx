@@ -118,7 +118,7 @@ export function HomeContent() {
           >
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-accent-hover"
             >
               Get Started
               <ArrowRight size={16} />
@@ -347,7 +347,7 @@ export function HomeContent() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-accent-hover"
             >
               Install Kiro
               <ArrowRight size={16} />
