@@ -56,12 +56,6 @@ export default function RootLayout({
               url: "https://kirohub.dev",
               description:
                 "Learn, build, and collaborate with Kiro. The AI-powered development community for modern developers.",
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://kirohub.dev/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
             }),
           }}
         />
