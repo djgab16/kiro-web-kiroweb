@@ -1,0 +1,7 @@
+{
+  "task_id": "task-accessibility-security-improvements",
+  "task_description": "Add security headers, custom error pages (404 and error boundary), prefers-reduced-motion accessibility support, and metadata template improvements to enhance the Kiro Hub site's security, accessibility, and SEO.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001"],
+  "blocked_reason": null
+}

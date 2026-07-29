@@ -16,7 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kiro Hub - AI-Powered Development Community",
+  metadataBase: new URL("https://kirohub.dev"),
+  title: {
+    default: "Kiro Hub - AI-Powered Development Community",
+    template: "%s | Kiro Hub",
+  },
   description:
     "Learn, build, and collaborate with Kiro. The AI-powered development community for modern developers seeking to amplify their productivity.",
   openGraph: {
