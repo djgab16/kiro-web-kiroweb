@@ -1,7 +1,11 @@
 {
-  "name": "nextjs",
+  "name": "kiro-hub",
   "version": "0.1.0",
+  "description": "AI-powered development community and educational platform",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
