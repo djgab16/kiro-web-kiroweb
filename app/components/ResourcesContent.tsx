@@ -151,22 +151,11 @@ const resources: Resource[] = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05, duration: 0.4, ease: "easeOut" as const },
-  }),
-};
+import { createFadeUp, createStagger } from "@/app/lib/animations";
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
+const fadeUp = createFadeUp({ delayMultiplier: 0.05, duration: 0.4 });
+
+const stagger = createStagger({ staggerChildren: 0.05 });
 
 export function ResourcesContent() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
