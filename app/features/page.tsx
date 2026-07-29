@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FeaturesContent } from "../components/FeaturesContent";
 
 export const metadata: Metadata = {
-  title: "Features - Kiro's Nine Powerful Capabilities",
+  title: "Features",
   description:
     "Explore Kiro's nine core capabilities: specification-driven development, automated task planning, AI-powered code generation, intelligent testing, PR automation, and more.",
   openGraph: {

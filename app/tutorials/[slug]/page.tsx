@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const title = tutorials[slug] || "Tutorial";
   return {
-    title: `${title} - Kiro Tutorial`,
+    title,
     description: `Learn ${title.toLowerCase()} with this step-by-step Kiro tutorial.`,
   };
 }

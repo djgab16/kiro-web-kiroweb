@@ -1,0 +1,29 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Add security headers, custom 404 page, prefers-reduced-motion support, and metadata template to improve the site's security posture, accessibility, and SEO.",
+  "status": "completed",
+  "steps": [
+    "1. Add security headers to next.config.ts: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Strict-Transport-Security, Permissions-Policy. Use the Next.js 16 headers() config in nextConfig.",
+    "2. Create app/not-found.tsx as a custom 404 page. It should be a server component that exports metadata. Include a simple, styled 'page not found' message with a link back to home. Follow the semantic HTML and Tailwind patterns used in existing pages.",
+    "3. Add prefers-reduced-motion support in app/globals.css using @media (prefers-reduced-motion: reduce) to disable animations and transitions for users who have requested reduced motion. This is required by the PRD (respecting prefers-reduced-motion).",
+    "4. Add a metadata template in app/layout.tsx using the metadataBase and title.template pattern from Next.js so child pages can use title.default and get 'Page Name | Kiro Hub' format automatically.",
+    "5. Create app/error.tsx as a client component error boundary. It should display a user-friendly error message with a 'Try again' button that calls reset(). Follow the existing design patterns.",
+    "6. Verify the build succeeds with npm run build and npm run lint."
+  ],
+  "acceptance_criteria": [
+    "npm run build completes successfully with all pages compiling",
+    "npm run lint passes with no errors",
+    "app/not-found.tsx exists and renders a custom 404 page",
+    "app/error.tsx exists and provides a client-side error boundary",
+    "next.config.ts includes security headers configuration",
+    "app/globals.css includes @media (prefers-reduced-motion: reduce) styles",
+    "app/layout.tsx uses metadata title template pattern"
+  ],
+  "verification": [
+    "export PATH=\"/root/.nvm/versions/node/v22.23.1/bin:$PATH\" && cd /projects/sandbox/kiro-web-kiroweb && npm run build",
+    "export PATH=\"/root/.nvm/versions/node/v22.23.1/bin:$PATH\" && cd /projects/sandbox/kiro-web-kiroweb && npm run lint"
+  ],
+  "blocked_reason": null,
+  "findings": "Next.js 16 uses unstable_retry instead of reset() for error boundaries. The not-found.tsx at app root handles all unmatched URLs globally. Build and lint both pass cleanly."
+}
