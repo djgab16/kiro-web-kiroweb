@@ -10,6 +10,8 @@ export default function Error({
   unstable_retry: () => void;
 }) {
   useEffect(() => {
+    // TODO: Integrate a production error reporting service (e.g., Sentry, Datadog)
+    // so client-side errors are captured beyond console output.
     console.error(error);
   }, [error]);
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AboutContent } from "../components/AboutContent";
 
 export const metadata: Metadata = {
-  title: "About Kiro - AI-Powered Development Assistant",
+  title: "About",
   description:
     "Learn about Kiro, the AI-powered development assistant that brings specification-driven development to every developer. Discover our vision and philosophy.",
   openGraph: {
