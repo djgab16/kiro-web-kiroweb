@@ -9,6 +9,8 @@ import {
   Handshake,
 } from "lucide-react";
 
+import { createFadeUp, createStagger } from "@/app/lib/animations";
+
 const communityItems = [
   {
     icon: MapPin,
@@ -51,8 +53,6 @@ const communityItems = [
     ctaHref: "#",
   },
 ];
-
-import { createFadeUp, createStagger } from "@/app/lib/animations";
 
 const fadeUp = createFadeUp({ delayMultiplier: 0.08 });
 

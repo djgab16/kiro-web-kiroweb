@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
+import { createFadeUp } from "@/app/lib/animations";
+
 const socialLinks = [
   {
     icon: Code,
@@ -53,8 +55,6 @@ interface FormErrors {
   subject?: string;
   message?: string;
 }
-
-import { createFadeUp } from "@/app/lib/animations";
 
 const fadeUp = createFadeUp({ delayMultiplier: 0.08, duration: 0.4 });
 

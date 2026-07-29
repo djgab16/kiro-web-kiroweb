@@ -12,6 +12,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { createFadeUp, createStagger } from "@/app/lib/animations";
+
 const tutorials = [
   {
     slug: "installing-kiro",
@@ -65,8 +67,6 @@ const difficultyColors = {
   Intermediate: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
   Advanced: "bg-red-500/10 text-red-400 border-red-500/20",
 };
-
-import { createFadeUp, createStagger } from "@/app/lib/animations";
 
 const fadeUp = createFadeUp({ delayMultiplier: 0.08 });
 

@@ -11,6 +11,8 @@ import {
   Rocket,
 } from "lucide-react";
 
+import { createFadeUp } from "@/app/lib/animations";
+
 const steps = [
   {
     number: 1,
@@ -62,8 +64,6 @@ const steps = [
       "Once approved, your code is ready for deployment. Kiro ensures your changes are production-ready with proper error handling, documentation, and configuration.",
   },
 ];
-
-import { createFadeUp } from "@/app/lib/animations";
 
 const fadeUp = createFadeUp({ y: 30 });
 

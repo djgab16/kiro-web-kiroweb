@@ -12,6 +12,8 @@ import {
   Terminal,
 } from "lucide-react";
 
+import { fadeUp, stagger } from "@/app/lib/animations";
+
 const featurePreview = [
   {
     icon: ClipboardList,
@@ -38,8 +40,6 @@ const featurePreview = [
       "From code changes to pull requests, automate the entire review workflow.",
   },
 ];
-
-import { fadeUp, stagger } from "@/app/lib/animations";
 
 export function HomeContent() {
   return (

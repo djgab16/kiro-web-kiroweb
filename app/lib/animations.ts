@@ -1,3 +1,10 @@
+/**
+ * Animation utilities for client components using framer-motion.
+ *
+ * Server components (e.g., not-found.tsx, loading.tsx) cannot use framer-motion
+ * because it requires a client runtime. For those components, use the CSS-based
+ * animations defined in globals.css (animate-fade-in, animate-pulse).
+ */
 import type { Variants } from "framer-motion";
 
 interface FadeUpOptions {

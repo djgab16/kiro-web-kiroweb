@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+import { createFadeUp, createStagger } from "@/app/lib/animations";
+
 type Category =
   | "All"
   | "Documentation"
@@ -150,8 +152,6 @@ const resources: Resource[] = [
     category: "Cheat Sheets",
   },
 ];
-
-import { createFadeUp, createStagger } from "@/app/lib/animations";
 
 const fadeUp = createFadeUp({ delayMultiplier: 0.05, duration: 0.4 });
 
