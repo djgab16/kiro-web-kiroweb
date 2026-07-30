@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Lightbulb,
@@ -243,9 +243,27 @@ Ready for production merge and deploy.`,
 export function DemoContent() {
   const [currentStep, setCurrentStep] = useState(0);
 
-  const goNext = () =>
-    setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1));
-  const goPrev = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
+  const goNext = useCallback(
+    () => setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1)),
+    []
+  );
+  const goPrev = useCallback(
+    () => setCurrentStep((prev) => Math.max(prev - 1, 0)),
+    []
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        goNext();
+      } else if (event.key === "ArrowLeft") {
+        goPrev();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [goNext, goPrev]);
 
   return (
     <>
