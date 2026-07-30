@@ -1,8 +1,15 @@
+/** A single FAQ entry displayed on the FAQ page. */
 export interface FAQItem {
+  /** The question text displayed as the accordion heading. */
   question: string;
+  /** The answer text revealed when the accordion item is expanded. */
   answer: string;
 }
 
+/**
+ * All FAQ items displayed on the /faq page.
+ * Also used to generate the FAQPage JSON-LD structured data.
+ */
 export const faqItems: FAQItem[] = [
   {
     question: "What is Kiro?",

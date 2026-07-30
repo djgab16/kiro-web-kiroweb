@@ -4,6 +4,11 @@ import { SITE_NAME } from "./constants";
 /**
  * Creates a standardized Metadata object for a page with pre-populated
  * openGraph and twitter card fields.
+ *
+ * @param options - The page metadata options.
+ * @param options.title - The page title (appended with the site name).
+ * @param options.description - A brief description for SEO and social cards.
+ * @returns A Next.js Metadata object with title, description, openGraph, and twitter fields.
  */
 export function createPageMeta({
   title,
