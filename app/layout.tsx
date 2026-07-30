@@ -63,6 +63,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <meta name="color-scheme" content="dark light" />
         <script
           dangerouslySetInnerHTML={{
             __html: `try{if(localStorage.theme==='light')document.documentElement.classList.add('light')}catch(e){}`,
