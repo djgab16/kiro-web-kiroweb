@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, type KeyboardEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Lightbulb,
@@ -247,6 +247,20 @@ export function DemoContent() {
     setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1));
   const goPrev = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
 
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goNext();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrev();
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   return (
     <>
       {/* Hero Section */}
@@ -274,7 +288,13 @@ export function DemoContent() {
 
       {/* Demo Interface */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
+        <div
+          className="mx-auto max-w-5xl"
+          role="region"
+          aria-label="Demo stepper - use left and right arrow keys to navigate"
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+        >
           {/* Step Navigation Tabs */}
           <motion.nav
             className="mb-8 flex flex-wrap justify-center gap-2"
