@@ -14,7 +14,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 glass">
+    <header className="sticky top-0 z-50 glass" aria-label="Site header">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
