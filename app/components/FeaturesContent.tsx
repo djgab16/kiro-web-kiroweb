@@ -12,23 +12,9 @@ import {
   MessageSquare,
   RefreshCw,
 } from "lucide-react";
+import { fadeUpFast, staggerFast } from "@/app/lib/animations";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" as const },
-  }),
-};
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
 
 const features = [
   {
@@ -122,13 +108,13 @@ export function FeaturesContent() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
+            variants={staggerFast}
           >
             {features.map((feature, i) => (
               <motion.article
                 key={feature.title}
                 className="glass group rounded-xl border border-border p-6 transition-colors hover:border-border-hover"
-                variants={fadeUp}
+                variants={fadeUpFast}
                 custom={i}
               >
                 <div className="mb-4 inline-flex rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">

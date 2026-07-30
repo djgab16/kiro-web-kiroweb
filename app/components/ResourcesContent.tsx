@@ -10,6 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
+import { fadeUpFast, staggerFast } from "@/app/lib/animations";
 
 type Category =
   | "All"
@@ -151,22 +152,7 @@ const resources: Resource[] = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05, duration: 0.4, ease: "easeOut" as const },
-  }),
-};
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
 
 export function ResourcesContent() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
@@ -233,7 +219,7 @@ export function ResourcesContent() {
             initial="hidden"
             animate="visible"
             key={activeCategory}
-            variants={stagger}
+            variants={staggerFast}
           >
             {filteredResources.map((resource, i) => {
               const Icon = categoryIcons[resource.category];
@@ -241,7 +227,7 @@ export function ResourcesContent() {
                 <motion.article
                   key={resource.title}
                   className="glass group flex flex-col rounded-xl border border-border p-6 transition-colors hover:border-border-hover"
-                  variants={fadeUp}
+                  variants={fadeUpFast}
                   custom={i}
                 >
                   <div className="mb-4 flex items-center justify-between">

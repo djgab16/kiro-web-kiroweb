@@ -11,6 +11,7 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
+import { fadeUpMedium, staggerMedium } from "@/app/lib/animations";
 
 const tutorials = [
   {
@@ -66,22 +67,7 @@ const difficultyColors = {
   Advanced: "bg-red-500/10 text-red-400 border-red-500/20",
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.08, duration: 0.5, ease: "easeOut" as const },
-  }),
-};
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
 
 export function TutorialsContent() {
   return (
@@ -118,10 +104,10 @@ export function TutorialsContent() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
+            variants={staggerMedium}
           >
             {tutorials.map((tutorial, i) => (
-              <motion.div key={tutorial.slug} variants={fadeUp} custom={i}>
+              <motion.div key={tutorial.slug} variants={fadeUpMedium} custom={i}>
                 <Link href={`/tutorials/${tutorial.slug}`}>
                   <article className="glass group flex flex-col gap-4 rounded-xl border border-border p-6 transition-all hover:border-border-hover sm:flex-row sm:items-center">
                     {/* Icon */}
