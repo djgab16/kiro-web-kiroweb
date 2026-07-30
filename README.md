@@ -47,6 +47,9 @@ npm run start
 | `npm run build` | Create a production build |
 | `npm run start` | Start the production server |
 | `npm run lint` | Run ESLint |
+| `npm run type-check` | Run TypeScript type checking without emitting files |
+| `npm run format` | Format all files with Prettier |
+| `npm run format:check` | Check formatting without making changes |
 
 ## Project Structure
 

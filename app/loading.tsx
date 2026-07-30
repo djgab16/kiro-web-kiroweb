@@ -1,6 +1,13 @@
 export default function Loading() {
   return (
-    <section className="w-full px-4 py-12 sm:px-6 lg:px-8" aria-label="Loading content">
+    <section
+      className="w-full px-4 py-12 sm:px-6 lg:px-8"
+      aria-label="Loading content"
+      role="status"
+      aria-busy="true"
+    >
+      <span className="sr-only">Loading, please wait...</span>
+
       {/* Heading skeleton */}
       <div className="mx-auto max-w-4xl space-y-6">
         <div className="h-10 w-3/4 animate-pulse rounded-lg bg-surface sm:h-12" />

@@ -8,7 +8,7 @@ import {
   useSyncExternalStore,
 } from "react";
 
-type Theme = "dark" | "light";
+export type Theme = "dark" | "light";
 
 interface ThemeContextType {
   theme: Theme;
