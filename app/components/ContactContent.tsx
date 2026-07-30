@@ -281,23 +281,25 @@ export function ContactContent() {
           </motion.form>
 
           {/* Success Toast */}
-          <AnimatePresence>
-            {submitted && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3 }}
-                className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg border border-green-500/30 bg-green-500/10 px-5 py-3 text-green-400 shadow-lg backdrop-blur-sm"
-                role="alert"
-              >
-                <CheckCircle size={20} />
-                <span className="text-sm font-medium">
-                  Thanks! This form is not yet connected to a backend. In a future version, your message will be sent.
-                </span>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div aria-live="polite" aria-atomic="true">
+            <AnimatePresence>
+              {submitted && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3 }}
+                  className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg border border-green-500/30 bg-green-500/10 px-5 py-3 text-green-400 shadow-lg backdrop-blur-sm"
+                  role="alert"
+                >
+                  <CheckCircle size={20} />
+                  <span className="text-sm font-medium">
+                    Thanks! This form is not yet connected to a backend. In a future version, your message will be sent.
+                  </span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </section>
     </>

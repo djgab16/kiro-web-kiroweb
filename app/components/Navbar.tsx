@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
@@ -23,6 +24,7 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 glass">
@@ -40,16 +42,24 @@ export function Navbar() {
 
         {/* Desktop nav links */}
         <ul className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="rounded-md px-3 py-2 text-sm text-muted transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`rounded-md px-3 py-2 text-sm transition-colors hover:text-foreground ${
+                    isActive
+                      ? "bg-surface text-foreground font-medium"
+                      : "text-muted"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Actions */}
@@ -88,17 +98,25 @@ export function Navbar() {
             className="overflow-hidden border-t border-border lg:hidden"
           >
             <ul className="flex flex-col gap-1 px-4 py-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block rounded-md px-3 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block rounded-md px-3 py-2 text-sm transition-colors hover:bg-surface hover:text-foreground ${
+                        isActive
+                          ? "bg-surface text-foreground font-medium"
+                          : "text-muted"
+                      }`}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </motion.div>
         )}
