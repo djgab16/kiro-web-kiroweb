@@ -1,24 +1,11 @@
 import type { MetadataRoute } from "next";
+import { BASE_URL, getSitemapRoutes } from "@/app/lib/routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kirohub.dev";
-
-  const routes = [
-    "/",
-    "/about",
-    "/features",
-    "/why-kiro",
-    "/how-it-works",
-    "/demo",
-    "/tutorials",
-    "/community",
-    "/resources",
-    "/faq",
-    "/contact",
-  ];
+  const routes = getSitemapRoutes();
 
   return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${BASE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: route === "/" ? 1 : 0.8,

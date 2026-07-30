@@ -1,0 +1,26 @@
+{
+  "id": "FEAT-001",
+  "type": "refactor",
+  "description": "Extract shared route constants to eliminate duplication across Navbar.tsx, Footer.tsx, and sitemap.ts. Create a single source of truth in app/lib/routes.ts that all three modules import from.",
+  "status": "completed",
+  "steps": [
+    "Create app/lib/routes.ts exporting: (a) a ROUTES array of objects with href, label, and optional metadata (category for footer grouping, includeInNav boolean, includeInSitemap boolean), (b) a BASE_URL constant ('https://kirohub.dev'), (c) helper functions like getNavRoutes(), getFooterRoutes() (grouped by category), getSitemapRoutes()",
+    "Update app/components/Navbar.tsx to import navLinks from app/lib/routes.ts using getNavRoutes() instead of the inline navLinks array",
+    "Update app/components/Footer.tsx to import footerLinks from app/lib/routes.ts using getFooterRoutes() instead of the inline footerLinks object",
+    "Update app/sitemap.ts to import routes from app/lib/routes.ts using getSitemapRoutes() and BASE_URL instead of the inline routes array and baseUrl string",
+    "Run npm run build and npm run lint to verify no regressions"
+  ],
+  "acceptance_criteria": [
+    "A single app/lib/routes.ts file is the source of truth for all navigation paths",
+    "Navbar.tsx, Footer.tsx, and sitemap.ts all import from app/lib/routes.ts with no inline route arrays",
+    "npm run build passes with exit code 0",
+    "npm run lint passes with no errors",
+    "All existing routes remain unchanged in the built output"
+  ],
+  "verification": [
+    "Run: npm run build - expect exit code 0",
+    "Run: npm run lint - expect no errors"
+  ],
+  "blocked_reason": null,
+  "findings": "Build and lint pass cleanly. No issues encountered. The metadataBase warning is pre-existing and unrelated to this change."
+}

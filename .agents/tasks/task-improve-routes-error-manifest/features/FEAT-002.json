@@ -1,0 +1,24 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Add app-level error boundary (app/error.tsx) and web app manifest (app/manifest.ts) to improve resilience and PWA readiness.",
+  "status": "completed",
+  "steps": [
+    "Create app/error.tsx as a 'use client' component that catches runtime errors and displays a user-friendly error page with a retry button. Follow the styling conventions from not-found.tsx (centered layout, accent color, Tailwind utilities, semantic HTML). Include the error message in development mode only.",
+    "Create app/manifest.ts using Next.js MetadataRoute.Manifest type that exports a web app manifest with: name 'Kiro Hub', short_name 'Kiro Hub', description matching the metadata in layout.tsx, start_url '/', display 'standalone', theme_color matching the dark theme (#0a0a0a), background_color matching the dark theme (#0a0a0a), and appropriate icon references to the existing favicon.",
+    "Run npm run build and npm run lint to verify both new files work correctly"
+  ],
+  "acceptance_criteria": [
+    "app/error.tsx exists as a 'use client' component with proper error boundary UI",
+    "app/manifest.ts exists and generates a valid manifest.webmanifest at build time",
+    "The error page uses semantic HTML and Tailwind CSS responsive utilities per steering file",
+    "npm run build passes with exit code 0",
+    "npm run lint passes with no errors"
+  ],
+  "verification": [
+    "Run: npm run build - expect exit code 0 and manifest.webmanifest in output routes",
+    "Run: npm run lint - expect no errors"
+  ],
+  "blocked_reason": null,
+  "findings": "Build and lint pass cleanly. manifest.webmanifest route confirmed in build output."
+}

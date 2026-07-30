@@ -1,0 +1,14 @@
+{
+  "task_id": "task-improve-routes-error-manifest",
+  "task_description": "Improve repository code quality through two improvements: (1) Extract shared route constants to eliminate duplication across Navbar, Footer, and sitemap, (2) Add app-level error boundary and web app manifest for resilience and PWA readiness.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "npm run build exits 0 with all routes including manifest.webmanifest. npm run lint exits 0 with no errors. No test framework configured - lint is the only automated check. Review issues addressed: added home link to error boundary, documented category intent in routes.ts."
+  }
+}

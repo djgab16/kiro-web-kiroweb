@@ -1,0 +1,25 @@
+{
+  "project_type": "Next.js 16 App Router static site with React 19, TypeScript 5, Tailwind CSS v4",
+  "language": "TypeScript / TSX",
+  "build_system": "npm with Next.js build tooling",
+  "test_framework": "No test framework configured - lint only",
+  "build_command": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && nvm use 22 && npm run build",
+  "test_command": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && nvm use 22 && npm run lint",
+  "verification_instructions": "1. Run npm run build and confirm exit code 0. 2. Run npm run lint and confirm no errors.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && nvm use 22 && npm install",
+  "environment_constraints": "Node.js 22 via nvm. OPEN_INTERNET network mode. No Docker needed.",
+  "contribution_requirements": "Use conventional commits. Each commit must leave the build passing. Use Tailwind CSS utility classes and semantic HTML per steering file.",
+  "key_patterns": "Pages use server components with Metadata exports. Client components live in app/components/ and use 'use client' directive. Dark-first theme with CSS variables. Glass morphism utility class. Framer-motion for animations in client components. Path alias @/* configured in tsconfig.",
+  "relevant_files": [
+    "app/components/Navbar.tsx",
+    "app/components/Footer.tsx",
+    "app/sitemap.ts",
+    "app/layout.tsx",
+    "app/globals.css",
+    "app/not-found.tsx",
+    "app/lib/animations.ts",
+    "next.config.ts"
+  ],
+  "directory_structure": "app/ - pages (about/, features/, etc. each with page.tsx), app/components/ - shared components, app/lib/ - utilities, public/ - static assets"
+}

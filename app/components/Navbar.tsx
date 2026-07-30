@@ -5,20 +5,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import { getNavRoutes } from "@/app/lib/routes";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/features", label: "Features" },
-  { href: "/why-kiro", label: "Why Kiro" },
-  { href: "/how-it-works", label: "How it Works" },
-  { href: "/demo", label: "Demo" },
-  { href: "/tutorials", label: "Tutorials" },
-  { href: "/community", label: "Community" },
-  { href: "/resources", label: "Resources" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
-];
+const navLinks = getNavRoutes();
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
