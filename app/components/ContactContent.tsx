@@ -198,9 +198,10 @@ export function ContactContent() {
                 }
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="Your name"
+                aria-describedby={errors.name ? "name-error" : undefined}
               />
               {errors.name && (
-                <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                <p id="name-error" className="mt-1 text-sm text-red-400">{errors.name}</p>
               )}
             </div>
 
@@ -220,9 +221,10 @@ export function ContactContent() {
                 }
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="you@example.com"
+                aria-describedby={errors.email ? "email-error" : undefined}
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                <p id="email-error" className="mt-1 text-sm text-red-400">{errors.email}</p>
               )}
             </div>
 
@@ -242,9 +244,10 @@ export function ContactContent() {
                 }
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="What is this about?"
+                aria-describedby={errors.subject ? "subject-error" : undefined}
               />
               {errors.subject && (
-                <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
+                <p id="subject-error" className="mt-1 text-sm text-red-400">{errors.subject}</p>
               )}
             </div>
 
@@ -264,9 +267,10 @@ export function ContactContent() {
                 }
                 className="w-full resize-none rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="Your message..."
+                aria-describedby={errors.message ? "message-error" : undefined}
               />
               {errors.message && (
-                <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                <p id="message-error" className="mt-1 text-sm text-red-400">{errors.message}</p>
               )}
             </div>
 
