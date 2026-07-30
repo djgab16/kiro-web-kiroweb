@@ -11,6 +11,8 @@ export interface RouteDefinition {
 }
 
 export const ROUTES: RouteDefinition[] = [
+  // Home intentionally has no `category` so it is excluded from the footer
+  // grouped links; the brand logo/name in the footer already links to home.
   { href: "/", label: "Home", includeInNav: true, includeInSitemap: true },
   {
     href: "/about",
