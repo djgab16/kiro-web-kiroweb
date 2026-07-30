@@ -87,13 +87,7 @@ const faqItems: FAQItem[] = [
   },
 ];
 
-function FAQAccordionItem({
-  item,
-  index,
-}: {
-  item: FAQItem;
-  index: number;
-}) {
+function FAQAccordionItem({ item, index }: { item: FAQItem; index: number }) {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = `faq-panel-${index}`;
   const buttonId = `faq-button-${index}`;

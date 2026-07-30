@@ -34,9 +34,7 @@ export default function Error({
         page.
       </p>
       {error.digest && (
-        <p className="mt-2 text-xs text-muted">
-          Error ID: {error.digest}
-        </p>
+        <p className="mt-2 text-xs text-muted">Error ID: {error.digest}</p>
       )}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <button

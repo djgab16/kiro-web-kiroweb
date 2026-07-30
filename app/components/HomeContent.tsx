@@ -91,8 +91,8 @@ export function HomeContent() {
             variants={fadeUp}
             custom={2}
           >
-            Kiro transforms how you develop software. From natural language specs
-            to production-ready code, experience the full lifecycle of
+            Kiro transforms how you develop software. From natural language
+            specs to production-ready code, experience the full lifecycle of
             AI-assisted development.
           </motion.p>
 
@@ -212,8 +212,8 @@ export function HomeContent() {
               Everything you need to ship faster
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              From specification to deployment, Kiro handles the heavy lifting so
-              you can focus on what matters.
+              From specification to deployment, Kiro handles the heavy lifting
+              so you can focus on what matters.
             </p>
           </motion.div>
 
@@ -237,9 +237,7 @@ export function HomeContent() {
                 <h3 className="text-lg font-semibold text-foreground">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted">
-                  {feature.description}
-                </p>
+                <p className="mt-2 text-sm text-muted">{feature.description}</p>
               </motion.article>
             ))}
           </motion.div>

@@ -295,7 +295,9 @@ export function DemoContent() {
                 aria-current={i === currentStep ? "step" : undefined}
               >
                 <stage.icon size={14} />
-                <span className="hidden sm:inline">{stage.title.split(". ")[1]}</span>
+                <span className="hidden sm:inline">
+                  {stage.title.split(". ")[1]}
+                </span>
                 <span className="sm:hidden">{i + 1}</span>
               </button>
             ))}

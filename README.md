@@ -41,15 +41,15 @@ npm run start
 
 ## Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start the development server |
-| `npm run build` | Create a production build |
-| `npm run start` | Start the production server |
-| `npm run lint` | Run ESLint |
-| `npm run type-check` | Run TypeScript type checking |
-| `npm run format` | Format code with Prettier |
-| `npm run format:check` | Check code formatting |
+| Script                 | Description                  |
+| ---------------------- | ---------------------------- |
+| `npm run dev`          | Start the development server |
+| `npm run build`        | Create a production build    |
+| `npm run start`        | Start the production server  |
+| `npm run lint`         | Run ESLint                   |
+| `npm run type-check`   | Run TypeScript type checking |
+| `npm run format`       | Format code with Prettier    |
+| `npm run format:check` | Check code formatting        |
 
 ## Project Structure
 
