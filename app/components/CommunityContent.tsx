@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 import { createFadeUp, createStagger } from "@/app/lib/animations";
+import { PageHero } from "./PageHero";
 
 const communityItems = [
   {
@@ -61,28 +62,10 @@ const stagger = createStagger({ staggerChildren: 0.08 });
 export function CommunityContent() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Community
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            Build together, learn together. Join the Kiro community and connect
-            with developers who are shaping the future of software development.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Community"
+        subtitle="Build together, learn together. Join the Kiro community and connect with developers who are shaping the future of software development."
+      />
 
       {/* Community Grid */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">

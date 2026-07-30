@@ -257,7 +257,6 @@ export function DemoContent() {
         goPrev();
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 

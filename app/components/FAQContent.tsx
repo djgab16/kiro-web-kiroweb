@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { faqItems, type FAQItem } from "@/app/lib/faq";
+import { PageHero } from "./PageHero";
 
 function FAQAccordionItem({
   item,
@@ -68,28 +69,10 @@ function FAQAccordionItem({
 export function FAQContent() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Frequently Asked Questions
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            Everything you need to know about Kiro, from getting started to
-            advanced features.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about Kiro, from getting started to advanced features."
+      />
 
       {/* FAQ Accordion */}
       <section className="border-t border-border px-4 py-16 sm:px-6 lg:px-8">
