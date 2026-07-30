@@ -333,7 +333,11 @@ export function DemoContent() {
             </div>
 
             {/* Animated Content */}
-            <div className="min-h-[400px] p-6 sm:min-h-[500px]">
+            <div
+              className="min-h-[400px] p-6 sm:min-h-[500px]"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentStep}
