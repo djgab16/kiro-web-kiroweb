@@ -1,4 +1,10 @@
 import { ImageResponse } from "next/og";
+import {
+  ACCENT_COLOR,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  THEME_COLOR,
+} from "./lib/constants";
 
 export const size = {
   width: 1200,
@@ -6,7 +12,7 @@ export const size = {
 };
 
 export const contentType = "image/png";
-export const alt = "Kiro Hub - AI-Powered Development Community";
+export const alt = `${SITE_NAME} - ${SITE_DESCRIPTION}`;
 
 export default function OGImage() {
   return new ImageResponse(
@@ -19,8 +25,8 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)",
-          fontFamily: "system-ui, sans-serif",
+          background: `linear-gradient(135deg, ${THEME_COLOR} 0%, #1a1a2e 50%, ${THEME_COLOR} 100%)`,
+          fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
         <div
@@ -40,19 +46,19 @@ export default function OGImage() {
               letterSpacing: "-2px",
             }}
           >
-            Kiro Hub
+            {SITE_NAME}
           </div>
           <div
             style={{
-              fontSize: "28px",
+              fontSize: "24px",
               fontWeight: 400,
-              color: "#888888",
-              maxWidth: "600px",
+              color: "#a1a1aa",
+              maxWidth: "700px",
               textAlign: "center",
-              lineHeight: 1.4,
+              lineHeight: 1.5,
             }}
           >
-            AI-Powered Development Community
+            {SITE_DESCRIPTION}
           </div>
           <div
             style={{
@@ -60,7 +66,7 @@ export default function OGImage() {
               marginTop: "16px",
               width: "120px",
               height: "4px",
-              background: "linear-gradient(90deg, #3b82f6, #2563eb)",
+              background: `linear-gradient(90deg, ${ACCENT_COLOR}, #1d4ed8)`,
               borderRadius: "2px",
             }}
           />
