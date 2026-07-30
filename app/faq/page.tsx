@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FAQContent } from "../components/FAQContent";
+import { faqItems } from "../lib/faq";
 
 export const metadata: Metadata = {
   title: "FAQ - Frequently Asked Questions About Kiro",
@@ -13,5 +14,26 @@ export const metadata: Metadata = {
 };
 
 export default function FAQPage() {
-  return <FAQContent />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <FAQContent />
+    </>
+  );
 }
