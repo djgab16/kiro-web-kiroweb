@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "./lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,14 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kiro Hub - AI-Powered Development Community",
-  description:
-    "Learn, build, and collaborate with Kiro. The AI-powered development community for modern developers seeking to amplify their productivity.",
+  title: `${SITE_NAME} - AI-Powered Development Community`,
+  description: SITE_DESCRIPTION,
   openGraph: {
-    title: "Kiro Hub - AI-Powered Development Community",
-    description:
-      "Learn, build, and collaborate with Kiro. The AI-powered development community for modern developers seeking to amplify their productivity.",
-    siteName: "Kiro Hub",
+    title: `${SITE_NAME} - AI-Powered Development Community`,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
     type: "website",
     locale: "en_US",
   },
@@ -52,8 +51,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Kiro Hub",
-              url: "https://kirohub.dev",
+              name: SITE_NAME,
+              url: SITE_URL,
               description:
                 "Learn, build, and collaborate with Kiro. The AI-powered development community for modern developers.",
             }),
