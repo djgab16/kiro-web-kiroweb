@@ -51,7 +51,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted transition-colors hover:text-foreground"
+                      className="text-sm text-muted transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none"
                     >
                       {link.label}
                     </Link>
@@ -76,7 +76,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="text-muted transition-colors hover:text-foreground"
+                className="text-muted transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none"
               >
                 {social.icon}
               </a>
