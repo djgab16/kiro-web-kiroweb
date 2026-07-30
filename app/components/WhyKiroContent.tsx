@@ -234,6 +234,7 @@ export function WhyKiroContent() {
                 className="glass rounded-xl border border-border p-4"
                 variants={fadeUp}
                 custom={i}
+                aria-label={row.feature}
               >
                 <h3 className="mb-3 text-sm font-semibold text-foreground">
                   {row.feature}
