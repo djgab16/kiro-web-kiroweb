@@ -10,7 +10,7 @@ import {
   GitPullRequest,
   Rocket,
 } from "lucide-react";
-import { fadeUp } from "@/app/lib/animations";
+import { fadeUpLarge } from "@/app/lib/animations";
 
 const steps = [
   {
@@ -110,7 +110,7 @@ export function HowItWorksContent() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
-                    variants={fadeUp}
+                    variants={fadeUpLarge}
                     custom={i}
                   >
                     {/* Step number circle */}
@@ -151,7 +151,7 @@ export function HowItWorksContent() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
-                    variants={fadeUp}
+                    variants={fadeUpLarge}
                     custom={i}
                   >
                     {/* Step number circle */}

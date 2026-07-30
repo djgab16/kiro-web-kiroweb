@@ -11,7 +11,7 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
-import { fadeUp, stagger } from "@/app/lib/animations";
+import { fadeUpMedium, staggerMedium } from "@/app/lib/animations";
 
 const tutorials = [
   {
@@ -104,10 +104,10 @@ export function TutorialsContent() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
+            variants={staggerMedium}
           >
             {tutorials.map((tutorial, i) => (
-              <motion.div key={tutorial.slug} variants={fadeUp} custom={i}>
+              <motion.div key={tutorial.slug} variants={fadeUpMedium} custom={i}>
                 <Link href={`/tutorials/${tutorial.slug}`}>
                   <article className="glass group flex flex-col gap-4 rounded-xl border border-border p-6 transition-all hover:border-border-hover sm:flex-row sm:items-center">
                     {/* Icon */}

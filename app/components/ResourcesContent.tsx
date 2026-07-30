@@ -10,7 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
-import { fadeUp, stagger } from "@/app/lib/animations";
+import { fadeUpFast, staggerFast } from "@/app/lib/animations";
 
 type Category =
   | "All"
@@ -219,7 +219,7 @@ export function ResourcesContent() {
             initial="hidden"
             animate="visible"
             key={activeCategory}
-            variants={stagger}
+            variants={staggerFast}
           >
             {filteredResources.map((resource, i) => {
               const Icon = categoryIcons[resource.category];
@@ -227,7 +227,7 @@ export function ResourcesContent() {
                 <motion.article
                   key={resource.title}
                   className="glass group flex flex-col rounded-xl border border-border p-6 transition-colors hover:border-border-hover"
-                  variants={fadeUp}
+                  variants={fadeUpFast}
                   custom={i}
                 >
                   <div className="mb-4 flex items-center justify-between">

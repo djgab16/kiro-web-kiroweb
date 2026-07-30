@@ -11,7 +11,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { useState, type FormEvent } from "react";
-import { fadeUp } from "@/app/lib/animations";
+import { fadeUpMedium } from "@/app/lib/animations";
 
 const socialLinks = [
   {
@@ -142,7 +142,7 @@ export function ContactContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
-                variants={fadeUp}
+                variants={fadeUpMedium}
                 custom={i}
               >
                 <div className="inline-flex shrink-0 rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">

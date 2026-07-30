@@ -8,7 +8,7 @@ import {
   MessageCircle,
   Handshake,
 } from "lucide-react";
-import { fadeUp, stagger } from "@/app/lib/animations";
+import { fadeUpMedium, staggerMedium } from "@/app/lib/animations";
 
 const communityItems = [
   {
@@ -89,13 +89,13 @@ export function CommunityContent() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
+            variants={staggerMedium}
           >
             {communityItems.map((item, i) => (
               <motion.article
                 key={item.title}
                 className="glass group flex flex-col rounded-xl border border-border p-6 transition-colors hover:border-border-hover"
-                variants={fadeUp}
+                variants={fadeUpMedium}
                 custom={i}
               >
                 <div className="mb-4 inline-flex rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">
