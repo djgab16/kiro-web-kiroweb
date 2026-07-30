@@ -1,0 +1,22 @@
+import Link from "next/link";
+
+export default function TutorialNotFound() {
+  return (
+    <section className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-md">
+        <h1 className="text-4xl font-bold text-foreground">
+          Tutorial Not Found
+        </h1>
+        <p className="mt-4 text-lg text-muted">
+          The tutorial you are looking for does not exist or has been moved.
+        </p>
+        <Link
+          href="/tutorials"
+          className="mt-8 inline-flex items-center rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+        >
+          Browse Tutorials
+        </Link>
+      </div>
+    </section>
+  );
+}
