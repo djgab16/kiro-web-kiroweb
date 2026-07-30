@@ -365,11 +365,22 @@ export function DemoContent() {
 
             {/* Navigation Footer */}
             <div className="flex items-center justify-between border-t border-border px-4 py-3">
+              <span id="demo-prev-desc" className="sr-only">
+                {currentStep > 0
+                  ? `Navigate to step ${currentStep}: ${demoStages[currentStep - 1]?.title.split(". ")[1]}`
+                  : "No previous step"}
+              </span>
+              <span id="demo-next-desc" className="sr-only">
+                {currentStep < demoStages.length - 1
+                  ? `Navigate to step ${currentStep + 2}: ${demoStages[currentStep + 1]?.title.split(". ")[1]}`
+                  : "No next step"}
+              </span>
               <button
                 onClick={goPrev}
                 disabled={currentStep === 0}
                 className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:text-foreground disabled:opacity-30 disabled:hover:text-muted"
                 aria-label="Previous step"
+                aria-describedby="demo-prev-desc"
               >
                 <ChevronLeft size={16} />
                 Previous
@@ -382,6 +393,7 @@ export function DemoContent() {
                 disabled={currentStep === demoStages.length - 1}
                 className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-accent transition-colors hover:text-accent-hover disabled:opacity-30 disabled:hover:text-accent"
                 aria-label="Next step"
+                aria-describedby="demo-next-desc"
               >
                 Next
                 <ChevronRight size={16} />
