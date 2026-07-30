@@ -2,7 +2,7 @@
   "id": "FEAT-001",
   "type": "refactor",
   "description": "Extract shared route constants to eliminate duplication across Navbar.tsx, Footer.tsx, and sitemap.ts. Create a single source of truth in app/lib/routes.ts that all three modules import from.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "Create app/lib/routes.ts exporting: (a) a ROUTES array of objects with href, label, and optional metadata (category for footer grouping, includeInNav boolean, includeInSitemap boolean), (b) a BASE_URL constant ('https://kirohub.dev'), (c) helper functions like getNavRoutes(), getFooterRoutes() (grouped by category), getSitemapRoutes()",
     "Update app/components/Navbar.tsx to import navLinks from app/lib/routes.ts using getNavRoutes() instead of the inline navLinks array",
@@ -22,5 +22,5 @@
     "Run: npm run lint - expect no errors"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "Build and lint pass cleanly. No issues encountered. The metadataBase warning is pre-existing and unrelated to this change."
 }
