@@ -82,22 +82,30 @@ body {
   }
 }
 
-/* Custom scrollbar for dark mode */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Custom scrollbar - only for devices with hover (non-touch) */
+@media (hover: hover) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border-hover);
-  border-radius: 4px;
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-hover);
+    border-radius: 4px;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+  }
+
+  /* Firefox scrollbar */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-hover) var(--background);
+  }
 }
 
 /* Animation keyframes */
