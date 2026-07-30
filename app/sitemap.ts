@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+const buildDate = new Date().toISOString().split("T")[0];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://kirohub.dev";
 
@@ -19,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: "2025-01-01",
+    lastModified: buildDate,
     changeFrequency: "weekly" as const,
     priority: route === "/" ? 1 : 0.8,
   }));
