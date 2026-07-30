@@ -67,29 +67,65 @@ export function ContactContent() {
     message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
+
+  function validateField(field: keyof typeof formData): string | undefined {
+    const value = formData[field];
+    switch (field) {
+      case "name":
+        return value.trim() ? undefined : "Name is required";
+      case "email":
+        if (!value.trim()) return "Email is required";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+          return "Please enter a valid email address";
+        return undefined;
+      case "subject":
+        return value.trim() ? undefined : "Subject is required";
+      case "message":
+        return value.trim() ? undefined : "Message is required";
+    }
+  }
 
   function validate(): FormErrors {
     const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
+    const fields: (keyof typeof formData)[] = [
+      "name",
+      "email",
+      "subject",
+      "message",
+    ];
+    for (const field of fields) {
+      const error = validateField(field);
+      if (error) newErrors[field] = error;
     }
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
     return newErrors;
+  }
+
+  function handleBlur(field: keyof typeof formData) {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    const error = validateField(field);
+    setErrors((prev) => {
+      const next = { ...prev };
+      if (error) {
+        next[field] = error;
+      } else {
+        delete next[field];
+      }
+      return next;
+    });
   }
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setTouched({ name: true, email: true, subject: true, message: true });
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
     setErrors({});
+    setTouched({});
     setSubmitted(true);
     setFormData({ name: "", email: "", subject: "", message: "" });
     setTimeout(() => setSubmitted(false), 4000);
@@ -180,12 +216,13 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
+                onBlur={() => handleBlur("name")}
                 aria-describedby={errors.name ? "name-error" : undefined}
                 aria-invalid={errors.name ? true : undefined}
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="Your name"
               />
-              {errors.name && (
+              {errors.name && touched.name && (
                 <p id="name-error" className="mt-1 text-sm text-red-400">
                   {errors.name}
                 </p>
@@ -206,12 +243,13 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                onBlur={() => handleBlur("email")}
                 aria-describedby={errors.email ? "email-error" : undefined}
                 aria-invalid={errors.email ? true : undefined}
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="you@example.com"
               />
-              {errors.email && (
+              {errors.email && touched.email && (
                 <p id="email-error" className="mt-1 text-sm text-red-400">
                   {errors.email}
                 </p>
@@ -232,12 +270,13 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, subject: e.target.value })
                 }
+                onBlur={() => handleBlur("subject")}
                 aria-describedby={errors.subject ? "subject-error" : undefined}
                 aria-invalid={errors.subject ? true : undefined}
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="What is this about?"
               />
-              {errors.subject && (
+              {errors.subject && touched.subject && (
                 <p id="subject-error" className="mt-1 text-sm text-red-400">
                   {errors.subject}
                 </p>
@@ -258,12 +297,13 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
+                onBlur={() => handleBlur("message")}
                 aria-describedby={errors.message ? "message-error" : undefined}
                 aria-invalid={errors.message ? true : undefined}
                 className="w-full resize-none rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="Your message..."
               />
-              {errors.message && (
+              {errors.message && touched.message && (
                 <p id="message-error" className="mt-1 text-sm text-red-400">
                   {errors.message}
                 </p>
