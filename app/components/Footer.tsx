@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { footerLinks } from "@/app/lib/navigation";
+
 // Inline SVG used for GitHub because lucide-react v0.460+ removed brand icons.
 const socialLinks = [
   {
@@ -19,25 +21,6 @@ const socialLinks = [
     ),
   },
 ];
-
-const footerLinks = {
-  Product: [
-    { href: "/features", label: "Features" },
-    { href: "/how-it-works", label: "How it Works" },
-    { href: "/demo", label: "Demo" },
-    { href: "/tutorials", label: "Tutorials" },
-  ],
-  Community: [
-    { href: "/community", label: "Community" },
-    { href: "/resources", label: "Resources" },
-    { href: "/faq", label: "FAQ" },
-    { href: "/contact", label: "Contact" },
-  ],
-  Company: [
-    { href: "/about", label: "About" },
-    { href: "/why-kiro", label: "Why Kiro" },
-  ],
-};
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

@@ -160,6 +160,10 @@ export function WhyKiroContent() {
             transition={{ delay: 0.1, duration: 0.5 }}
           >
             <table className="w-full">
+              <caption className="sr-only">
+                Feature comparison between Kiro, Traditional Coding, AI
+                Chatbots, and Other AI IDEs
+              </caption>
               <thead>
                 <tr className="border-b border-border bg-surface">
                   <th className="px-6 py-4 text-left text-sm font-medium text-muted">

@@ -197,11 +197,15 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
+                aria-describedby={errors.name ? "name-error" : undefined}
+                aria-invalid={errors.name ? true : undefined}
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="Your name"
               />
               {errors.name && (
-                <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                <p id="name-error" className="mt-1 text-sm text-red-400">
+                  {errors.name}
+                </p>
               )}
             </div>
 
@@ -219,11 +223,15 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                aria-describedby={errors.email ? "email-error" : undefined}
+                aria-invalid={errors.email ? true : undefined}
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="you@example.com"
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                <p id="email-error" className="mt-1 text-sm text-red-400">
+                  {errors.email}
+                </p>
               )}
             </div>
 
@@ -241,11 +249,15 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, subject: e.target.value })
                 }
+                aria-describedby={errors.subject ? "subject-error" : undefined}
+                aria-invalid={errors.subject ? true : undefined}
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="What is this about?"
               />
               {errors.subject && (
-                <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
+                <p id="subject-error" className="mt-1 text-sm text-red-400">
+                  {errors.subject}
+                </p>
               )}
             </div>
 
@@ -263,11 +275,15 @@ export function ContactContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
+                aria-describedby={errors.message ? "message-error" : undefined}
+                aria-invalid={errors.message ? true : undefined}
                 className="w-full resize-none rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="Your message..."
               />
               {errors.message && (
-                <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                <p id="message-error" className="mt-1 text-sm text-red-400">
+                  {errors.message}
+                </p>
               )}
             </div>
 
@@ -294,7 +310,8 @@ export function ContactContent() {
                 >
                   <CheckCircle size={20} />
                   <span className="text-sm font-medium">
-                    Thanks! This form is not yet connected to a backend. In a future version, your message will be sent.
+                    Thanks! This form is not yet connected to a backend. In a
+                    future version, your message will be sent.
                   </span>
                 </motion.div>
               )}
