@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TutorialDetailContent } from "../../components/TutorialDetailContent";
-import { tutorialSlugs, tutorialsBySlug } from "../../lib/tutorials";
+import { createPageMeta } from "../../lib/metadata";
+import { tutorials, tutorialSlugs, tutorialsBySlug } from "../../lib/tutorials";
 
 export function generateStaticParams() {
   return tutorialSlugs.map((slug) => ({ slug }));
@@ -13,10 +14,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const title = tutorialsBySlug[slug] || "Tutorial";
+  const tutorial = tutorials.find((t) => t.slug === slug);
+  const title = tutorial?.title ?? "Tutorial";
+  const description =
+    tutorial?.description ??
+    `Learn ${title.toLowerCase()} with this step-by-step Kiro tutorial.`;
+
   return {
-    title: `${title} - Kiro Tutorial`,
-    description: `Learn ${title.toLowerCase()} with this step-by-step Kiro tutorial.`,
+    ...createPageMeta({ title, description }),
+    robots: { index: true, follow: true },
   };
 }
 
