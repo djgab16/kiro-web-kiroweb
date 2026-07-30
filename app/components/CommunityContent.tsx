@@ -111,11 +111,11 @@ export function CommunityContent() {
                   {item.description}
                 </p>
                 {item.ctaHref === "#" ? (
-                  <span
-                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-muted cursor-default"
-                  >
+                  <span className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-muted cursor-default">
                     {item.cta}
-                    <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">Coming Soon</span>
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                      Coming Soon
+                    </span>
                   </span>
                 ) : (
                   <a
