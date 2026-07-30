@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TutorialDetailContent } from "../../components/TutorialDetailContent";
-
-const tutorials: Record<string, string> = {
-  "installing-kiro": "Installing Kiro",
-  "your-first-kiro-project": "Your First Kiro Project",
-  "writing-specifications": "Writing Specifications",
-  "working-with-agents": "Working with Agents",
-  "advanced-workflows": "Advanced Workflows",
-};
+import { tutorialSlugs, tutorialsBySlug } from "../../lib/tutorials";
 
 export function generateStaticParams() {
-  return Object.keys(tutorials).map((slug) => ({ slug }));
+  return tutorialSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -20,7 +13,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const title = tutorials[slug] || "Tutorial";
+  const title = tutorialsBySlug[slug] || "Tutorial";
   return {
     title: `${title} - Kiro Tutorial`,
     description: `Learn ${title.toLowerCase()} with this step-by-step Kiro tutorial.`,
@@ -33,7 +26,7 @@ export default async function TutorialDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const title = tutorials[slug];
+  const title = tutorialsBySlug[slug];
 
   if (!title) {
     notFound();

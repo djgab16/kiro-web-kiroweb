@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/constants";
+import { tutorialSlugs } from "./lib/tutorials";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
@@ -16,14 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources",
     "/faq",
     "/contact",
-  ];
-
-  const tutorialSlugs = [
-    "installing-kiro",
-    "your-first-kiro-project",
-    "writing-specifications",
-    "working-with-agents",
-    "advanced-workflows",
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
