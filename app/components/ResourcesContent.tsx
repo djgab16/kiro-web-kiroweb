@@ -10,6 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
+import { fadeUp, stagger } from "@/app/lib/animations";
 
 type Category =
   | "All"
@@ -151,22 +152,7 @@ const resources: Resource[] = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05, duration: 0.4, ease: "easeOut" as const },
-  }),
-};
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
 
 export function ResourcesContent() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
