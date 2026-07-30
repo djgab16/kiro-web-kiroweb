@@ -242,6 +242,7 @@ Ready for production merge and deploy.`,
 
 export function DemoContent() {
   const [currentStep, setCurrentStep] = useState(0);
+  const currentStage = demoStages[currentStep]!;
 
   const goNext = () =>
     setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1));
@@ -328,7 +329,7 @@ export function DemoContent() {
               <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
               <div className="h-3 w-3 rounded-full bg-green-500/60" />
               <span className="ml-3 text-xs text-muted">
-                {demoStages[currentStep].subtitle}
+                {currentStage.subtitle}
               </span>
             </div>
 
@@ -348,15 +349,15 @@ export function DemoContent() {
                 >
                   <div className="mb-4 flex items-center gap-3">
                     {(() => {
-                      const Icon = demoStages[currentStep].icon;
+                      const Icon = currentStage.icon;
                       return <Icon size={24} className="text-accent" />;
                     })()}
                     <h2 className="text-xl font-semibold text-foreground">
-                      {demoStages[currentStep].title}
+                      {currentStage.title}
                     </h2>
                   </div>
                   <pre className="overflow-x-auto whitespace-pre-wrap font-mono text-xs text-muted leading-relaxed sm:text-sm">
-                    <code>{demoStages[currentStep].content}</code>
+                    <code>{currentStage.content}</code>
                   </pre>
                 </motion.div>
               </AnimatePresence>
