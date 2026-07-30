@@ -56,9 +56,20 @@ npm run start
 ```
 app/              - Application routes and pages (Next.js App Router)
 app/components/   - Shared React components
+app/lib/          - Utilities, constants, and shared types
 docs/             - Project documentation
 public/           - Static assets
 ```
+
+## Image Optimization
+
+This project currently uses only inline SVGs and vector assets. When adding raster images (PNG, JPG, WebP) in the future, follow these best practices:
+
+- Use the `next/image` component instead of a raw `<img>` tag. It provides automatic lazy loading, responsive sizing, and format optimization.
+- `next/image` sets `loading="lazy"` by default for off-screen images. Only override with `loading="eager"` for above-the-fold hero images or LCP elements.
+- Provide explicit `width` and `height` props (or use `fill` with a sized parent) to prevent layout shift (CLS).
+- Prefer modern formats (WebP, AVIF) for smaller file sizes. Next.js can serve optimized formats automatically when using the built-in image loader.
+- Store large assets in `public/images/` and reference them with a leading `/images/` path.
 
 ## Contributing
 
