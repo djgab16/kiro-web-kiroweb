@@ -199,7 +199,10 @@ export function HomeContent() {
       </section>
 
       {/* Features Preview Section */}
-      <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
+      <section
+        aria-label="Features Preview"
+        className="border-t border-border px-4 py-24 sm:px-6 lg:px-8"
+      >
         <div className="mx-auto max-w-7xl">
           <motion.div
             className="text-center"
@@ -245,7 +248,10 @@ export function HomeContent() {
       </section>
 
       {/* Social Proof Section */}
-      <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
+      <section
+        aria-label="Social Proof"
+        className="border-t border-border px-4 py-24 sm:px-6 lg:px-8"
+      >
         <div className="mx-auto max-w-7xl">
           <motion.div
             className="text-center"
