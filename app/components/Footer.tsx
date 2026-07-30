@@ -59,7 +59,7 @@ export function Footer() {
 
           {/* Link groups */}
           {Object.entries(footerLinks).map(([group, links]) => (
-            <div key={group}>
+            <nav key={group} aria-label={`${group} links`}>
               <h3 className="mb-3 text-sm font-semibold text-foreground">
                 {group}
               </h3>
@@ -75,7 +75,7 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
         </div>
 
