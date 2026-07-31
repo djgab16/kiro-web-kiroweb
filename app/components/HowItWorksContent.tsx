@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { createFadeUp } from "@/app/lib/animations";
+import { PageHero } from "./PageHero";
 
 const steps = [
   {
@@ -70,29 +71,10 @@ const fadeUp = createFadeUp({ y: 30 });
 export function HowItWorksContent() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            How It Works
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            From initial idea to production deployment in seven steps. Kiro
-            guides you through the entire development lifecycle with
-            specification-driven automation.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="How It Works"
+        subtitle="From initial idea to production deployment in seven steps. Kiro guides you through the entire development lifecycle with specification-driven automation."
+      />
 
       {/* Timeline Section */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
