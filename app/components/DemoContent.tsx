@@ -13,6 +13,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { PageHero } from "./PageHero";
 
 const demoStages = [
   {
@@ -268,28 +269,10 @@ export function DemoContent() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Interactive Demo
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            Walk through a complete Kiro workflow. Click through each stage to
-            see how Kiro transforms an idea into production-ready code.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Interactive Demo"
+        subtitle="Walk through a complete Kiro workflow. Click through each stage to see how Kiro transforms an idea into production-ready code."
+      />
 
       {/* Demo Interface */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
