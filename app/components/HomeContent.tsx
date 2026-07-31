@@ -14,6 +14,30 @@ import {
 
 import { fadeUp, stagger } from "@/app/lib/animations";
 
+const testimonials = [
+  {
+    id: "testimonial-fullstack",
+    quote:
+      "Kiro turned our 2-week sprint into a 2-day task. The spec-driven approach means we ship with confidence.",
+    author: "Developer",
+    role: "Full-Stack Engineer",
+  },
+  {
+    id: "testimonial-senior",
+    quote:
+      "Finally, an AI tool that understands the full context of our codebase. Multi-file edits are seamless.",
+    author: "Developer",
+    role: "Senior Engineer",
+  },
+  {
+    id: "testimonial-techlead",
+    quote:
+      "The automated PR workflow alone saved us hours every week. Testing generation is the cherry on top.",
+    author: "Developer",
+    role: "Tech Lead",
+  },
+];
+
 const featurePreview = [
   {
     icon: ClipboardList,
@@ -272,29 +296,7 @@ export function HomeContent() {
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
           >
-            {[
-              {
-                id: "testimonial-fullstack",
-                quote:
-                  "Kiro turned our 2-week sprint into a 2-day task. The spec-driven approach means we ship with confidence.",
-                author: "Developer",
-                role: "Full-Stack Engineer",
-              },
-              {
-                id: "testimonial-senior",
-                quote:
-                  "Finally, an AI tool that understands the full context of our codebase. Multi-file edits are seamless.",
-                author: "Developer",
-                role: "Senior Engineer",
-              },
-              {
-                id: "testimonial-techlead",
-                quote:
-                  "The automated PR workflow alone saved us hours every week. Testing generation is the cherry on top.",
-                author: "Developer",
-                role: "Tech Lead",
-              },
-            ].map((testimonial, i) => (
+            {testimonials.map((testimonial, i) => (
               <motion.article
                 key={testimonial.id}
                 className="glass rounded-xl border border-border p-6"
