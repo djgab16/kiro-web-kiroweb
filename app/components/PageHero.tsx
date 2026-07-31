@@ -1,6 +1,8 @@
 "use client";
 
+import { useId } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/app/lib/cn";
 
 interface PageHeroProps {
   title: string;
@@ -8,11 +10,17 @@ interface PageHeroProps {
   className?: string;
 }
 
-export function PageHero({ title, subtitle, className = "" }: PageHeroProps) {
+export function PageHero({ title, subtitle, className }: PageHeroProps) {
+  const headingId = useId();
+
   return (
-    <section className={`px-4 py-24 sm:px-6 lg:px-8 ${className}`}>
+    <section
+      className={cn("px-4 py-24 sm:px-6 lg:px-8", className)}
+      aria-labelledby={headingId}
+    >
       <div className="mx-auto max-w-4xl text-center">
         <motion.h1
+          id={headingId}
           className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

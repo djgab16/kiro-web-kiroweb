@@ -7,6 +7,8 @@ import { Clock, ArrowRight } from "lucide-react";
 import { createFadeUp, createStagger } from "@/app/lib/animations";
 import { tutorials } from "@/app/lib/tutorials";
 import type { Difficulty } from "@/app/lib/tutorials";
+import { cn } from "@/app/lib/cn";
+import { PageHero } from "./PageHero";
 
 const difficultyColors: Record<Difficulty, string> = {
   Beginner: "bg-green-500/10 text-green-400 border-green-500/20",
@@ -21,29 +23,10 @@ const stagger = createStagger({ staggerChildren: 0.08 });
 export function TutorialsContent() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Tutorials
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            Follow the recommended learning path to master Kiro. Each tutorial
-            builds on the previous one, taking you from installation to advanced
-            workflows.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Tutorials"
+        subtitle="Follow the recommended learning path to master Kiro. Each tutorial builds on the previous one, taking you from installation to advanced workflows."
+      />
 
       {/* Tutorials List */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
@@ -73,7 +56,10 @@ export function TutorialsContent() {
                           {tutorial.title}
                         </h3>
                         <span
-                          className={`rounded-full border px-2 py-0.5 text-xs font-medium ${difficultyColors[tutorial.difficulty]}`}
+                          className={cn(
+                            "rounded-full border px-2 py-0.5 text-xs font-medium",
+                            difficultyColors[tutorial.difficulty],
+                          )}
                         >
                           {tutorial.difficulty}
                         </span>

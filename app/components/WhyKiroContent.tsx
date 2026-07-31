@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Check, X, Minus } from "lucide-react";
 
 import { fadeUp, stagger } from "@/app/lib/animations";
+import { cn } from "@/app/lib/cn";
+import { PageHero } from "./PageHero";
 
 type CellValue = "yes" | "no" | "partial";
 
@@ -129,28 +131,10 @@ const differentiators = [
 export function WhyKiroContent() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Why Kiro?
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            See how Kiro compares to traditional development, AI chatbots, and
-            other AI-powered IDEs. The difference is in the approach.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Why Kiro?"
+        subtitle="See how Kiro compares to traditional development, AI chatbots, and other AI-powered IDEs. The difference is in the approach."
+      />
 
       {/* Comparison Section */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
@@ -202,9 +186,10 @@ export function WhyKiroContent() {
                 {comparisonData.map((row, i) => (
                   <tr
                     key={row.feature}
-                    className={`border-b border-border transition-colors hover:bg-surface/50 ${
-                      i === comparisonData.length - 1 ? "border-b-0" : ""
-                    }`}
+                    className={cn(
+                      "border-b border-border transition-colors hover:bg-surface/50",
+                      i === comparisonData.length - 1 && "border-b-0",
+                    )}
                   >
                     <td className="px-6 py-4 text-sm text-foreground">
                       {row.feature}

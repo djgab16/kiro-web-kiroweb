@@ -12,6 +12,8 @@ import {
 import { useState } from "react";
 
 import { createFadeUp, createStagger } from "@/app/lib/animations";
+import { cn } from "@/app/lib/cn";
+import { PageHero } from "./PageHero";
 
 type Category =
   | "All"
@@ -167,28 +169,10 @@ export function ResourcesContent() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Resources
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            Curated collection of documentation, videos, templates, and
-            references to help you get the most out of Kiro.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Resources"
+        subtitle="Curated collection of documentation, videos, templates, and references to help you get the most out of Kiro."
+      />
 
       {/* Category Filter */}
       <section className="border-t border-border px-4 py-12 sm:px-6 lg:px-8">
@@ -205,11 +189,12 @@ export function ResourcesContent() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-medium transition-all",
                   activeCategory === category
                     ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "border border-border bg-surface text-muted hover:border-border-hover hover:text-foreground"
-                }`}
+                    : "border border-border bg-surface text-muted hover:border-border-hover hover:text-foreground",
+                )}
                 aria-pressed={activeCategory === category}
               >
                 {category}

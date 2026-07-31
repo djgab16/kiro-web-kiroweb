@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { navLinks } from "@/app/lib/navigation";
+import { cn } from "@/app/lib/cn";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,11 +36,12 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-md px-3 py-2 text-sm transition-colors hover:text-foreground ${
+                  className={cn(
+                    "rounded-md px-3 py-2 text-sm transition-colors hover:text-foreground",
                     isActive
                       ? "bg-surface text-foreground font-medium"
-                      : "text-muted"
-                  }`}
+                      : "text-muted",
+                  )}
                   aria-current={isActive ? "page" : undefined}
                 >
                   {link.label}
@@ -94,11 +96,12 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`block rounded-md px-3 py-2 text-sm transition-colors hover:bg-surface hover:text-foreground ${
+                      className={cn(
+                        "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-surface hover:text-foreground",
                         isActive
                           ? "bg-surface text-foreground font-medium"
-                          : "text-muted"
-                      }`}
+                          : "text-muted",
+                      )}
                       aria-current={isActive ? "page" : undefined}
                     >
                       {link.label}

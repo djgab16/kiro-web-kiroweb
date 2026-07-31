@@ -13,6 +13,8 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { cn } from "@/app/lib/cn";
+import { PageHero } from "./PageHero";
 
 const demoStages = [
   {
@@ -268,28 +270,10 @@ export function DemoContent() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Interactive Demo
-          </motion.h1>
-          <motion.p
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            Walk through a complete Kiro workflow. Click through each stage to
-            see how Kiro transforms an idea into production-ready code.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        title="Interactive Demo"
+        subtitle="Walk through a complete Kiro workflow. Click through each stage to see how Kiro transforms an idea into production-ready code."
+      />
 
       {/* Demo Interface */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
@@ -313,11 +297,12 @@ export function DemoContent() {
                 key={stage.title}
                 type="button"
                 onClick={() => setCurrentStep(i)}
-                className={`flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all sm:text-sm ${
+                className={cn(
+                  "flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all sm:text-sm",
                   i === currentStep
                     ? "border border-accent bg-accent-glow text-accent"
-                    : "border border-border text-muted hover:border-border-hover hover:text-foreground"
-                }`}
+                    : "border border-border text-muted hover:border-border-hover hover:text-foreground",
+                )}
                 aria-current={i === currentStep ? "step" : undefined}
               >
                 <stage.icon size={14} />
