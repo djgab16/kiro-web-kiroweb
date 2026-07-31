@@ -1,5 +1,10 @@
 import type { MetadataRoute } from "next";
-import { SITE_NAME, SITE_DESCRIPTION, THEME_COLOR } from "./lib/constants";
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  THEME_COLOR,
+  ACCENT_COLOR,
+} from "./lib/constants";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -9,12 +14,24 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     display: "standalone",
     background_color: THEME_COLOR,
-    theme_color: THEME_COLOR,
+    theme_color: ACCENT_COLOR,
     icons: [
       {
         src: "/favicon.ico",
         sizes: "any",
         type: "image/x-icon",
+      },
+      {
+        src: "/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "maskable",
+      },
+      {
+        src: "/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
       },
     ],
     categories: ["developer tools", "education", "productivity"],
