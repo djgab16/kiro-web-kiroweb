@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, className = "" }: PageHeroProps) {
   return (
-    <section className={`px-4 py-24 sm:px-6 lg:px-8 ${className}`}>
+    <header className={`px-4 py-24 sm:px-6 lg:px-8 ${className}`}>
       <div className="mx-auto max-w-4xl text-center">
         <motion.h1
           className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
@@ -29,6 +29,6 @@ export function PageHero({ title, subtitle, className = "" }: PageHeroProps) {
           {subtitle}
         </motion.p>
       </div>
-    </section>
+    </header>
   );
 }
