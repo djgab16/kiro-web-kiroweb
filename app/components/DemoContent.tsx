@@ -244,9 +244,14 @@ export function DemoContent() {
   const [currentStep, setCurrentStep] = useState(0);
   const currentStage = demoStages[currentStep]!;
 
-  const goNext = () =>
-    setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1));
-  const goPrev = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
+  const goNext = useCallback(
+    () => setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1)),
+    [],
+  );
+  const goPrev = useCallback(
+    () => setCurrentStep((prev) => Math.max(prev - 1, 0)),
+    [],
+  );
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLDivElement>) => {
@@ -258,7 +263,7 @@ export function DemoContent() {
         goPrev();
       }
     },
-    []
+    [goNext, goPrev],
   );
 
   return (
@@ -289,7 +294,7 @@ export function DemoContent() {
       {/* Demo Interface */}
       <section className="border-t border-border px-4 py-24 sm:px-6 lg:px-8">
         <div
-          className="mx-auto max-w-5xl"
+          className="mx-auto max-w-5xl focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 focus-visible:rounded-lg"
           role="region"
           aria-label="Demo stepper - use left and right arrow keys to navigate"
           tabIndex={0}

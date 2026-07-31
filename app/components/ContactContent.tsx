@@ -157,6 +157,7 @@ export function ContactContent() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visit us on ${link.name} (opens in a new tab)`}
                 className="glass group flex items-start gap-4 rounded-xl border border-border p-5 transition-colors hover:border-border-hover"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

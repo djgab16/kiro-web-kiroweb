@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Implement accessibility improvements, enhanced health API, SECURITY.md, and DemoContent useCallback fix for better code quality, security policy, and accessibility compliance.",
+  "status": "in_progress",
+  "steps": [
+    "Add SECURITY.md to repository root with responsible disclosure policy",
+    "Enhance health API to include version from package.json and process uptime",
+    "Add visible focus ring to demo stepper container in DemoContent.tsx",
+    "Add aria-label attributes to social links in ContactContent.tsx",
+    "Wrap goNext/goPrev in useCallback in DemoContent.tsx for correctness"
+  ],
+  "acceptance_criteria": [
+    "SECURITY.md exists at repo root with disclosure instructions",
+    "Health API returns status, timestamp, version, and uptime fields",
+    "Demo stepper div has focus-visible:outline classes for visible keyboard focus",
+    "All social links in ContactContent have descriptive aria-label attributes",
+    "goNext and goPrev are wrapped in useCallback in DemoContent.tsx",
+    "npm run build succeeds",
+    "npm run lint succeeds"
+  ],
+  "verification": [
+    "Run npm run build and confirm no errors",
+    "Run npm run lint and confirm no lint errors"
+  ],
+  "blocked_reason": null,
+  "findings": null
+}
