@@ -53,6 +53,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           {/* Theme toggle */}
           <button
+            type="button"
             onClick={toggleTheme}
             className="rounded-md p-2 text-muted transition-colors hover:bg-surface hover:text-foreground"
             aria-label={
@@ -64,6 +65,7 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="rounded-md p-2 text-muted transition-colors hover:bg-surface hover:text-foreground lg:hidden"
             aria-label={isOpen ? "Close menu" : "Open menu"}

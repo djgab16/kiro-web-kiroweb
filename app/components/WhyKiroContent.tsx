@@ -76,12 +76,27 @@ const comparisonData: ComparisonRow[] = [
 
 function CellIcon({ value }: { value: CellValue }) {
   if (value === "yes") {
-    return <Check size={18} className="text-green-400" />;
+    return (
+      <>
+        <Check size={18} className="text-green-400" />
+        <span className="sr-only">Yes</span>
+      </>
+    );
   }
   if (value === "no") {
-    return <X size={18} className="text-red-400" />;
+    return (
+      <>
+        <X size={18} className="text-red-400" />
+        <span className="sr-only">No</span>
+      </>
+    );
   }
-  return <Minus size={18} className="text-yellow-400" />;
+  return (
+    <>
+      <Minus size={18} className="text-yellow-400" />
+      <span className="sr-only">Partial</span>
+    </>
+  );
 }
 
 const differentiators = [

@@ -311,6 +311,7 @@ export function DemoContent() {
             {demoStages.map((stage, i) => (
               <button
                 key={stage.title}
+                type="button"
                 onClick={() => setCurrentStep(i)}
                 className={`flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all sm:text-sm ${
                   i === currentStep
@@ -381,6 +382,7 @@ export function DemoContent() {
                   : "No next step"}
               </span>
               <button
+                type="button"
                 onClick={goPrev}
                 disabled={currentStep === 0}
                 className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:text-foreground disabled:opacity-30 disabled:hover:text-muted"
@@ -394,6 +396,7 @@ export function DemoContent() {
                 {currentStep + 1} / {demoStages.length}
               </span>
               <button
+                type="button"
                 onClick={goNext}
                 disabled={currentStep === demoStages.length - 1}
                 className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-accent transition-colors hover:text-accent-hover disabled:opacity-30 disabled:hover:text-accent"

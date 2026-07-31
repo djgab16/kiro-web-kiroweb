@@ -28,6 +28,7 @@ function FAQAccordionItem({
     >
       <button
         id={buttonId}
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-accent"
         aria-expanded={isOpen}
