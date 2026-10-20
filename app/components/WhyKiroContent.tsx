@@ -168,7 +168,7 @@ export function WhyKiroContent() {
                   <th className="px-6 py-4 text-left text-sm font-medium text-muted">
                     Capability
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-accent">
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-accent-text">
                     Kiro
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-muted">
@@ -188,7 +188,7 @@ export function WhyKiroContent() {
                     key={row.feature}
                     className={cn(
                       "border-b border-border transition-colors hover:bg-surface/50",
-                      i === comparisonData.length - 1 && "border-b-0",
+                      i === comparisonData.length - 1 && "border-b-0"
                     )}
                   >
                     <td className="px-6 py-4 text-sm text-foreground">
@@ -242,7 +242,7 @@ export function WhyKiroContent() {
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="flex items-center gap-2">
                     <CellIcon value={row.kiro} />
-                    <span className="font-medium text-accent">Kiro</span>
+                    <span className="font-medium text-accent-text">Kiro</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CellIcon value={row.traditional} />
@@ -302,7 +302,7 @@ export function WhyKiroContent() {
                 <p className="mt-3 text-sm text-muted leading-relaxed">
                   {diff.description}
                 </p>
-                <p className="mt-4 inline-flex rounded-full border border-border px-3 py-1 text-xs text-accent">
+                <p className="mt-4 inline-flex rounded-full border border-border px-3 py-1 text-xs text-accent-text">
                   {diff.capability}
                 </p>
               </motion.article>

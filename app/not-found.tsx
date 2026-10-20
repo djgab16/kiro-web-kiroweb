@@ -12,7 +12,7 @@ export default function NotFound() {
       className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16 text-center animate-fade-in"
       aria-labelledby="not-found-heading"
     >
-      <h1 className="text-8xl font-bold text-accent sm:text-9xl">404</h1>
+      <h1 className="text-8xl font-bold text-accent-text sm:text-9xl">404</h1>
       <h2
         id="not-found-heading"
         className="mt-4 text-2xl font-semibold text-foreground sm:text-3xl"

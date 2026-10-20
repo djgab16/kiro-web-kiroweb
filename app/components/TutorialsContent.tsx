@@ -45,20 +45,20 @@ export function TutorialsContent() {
                     {/* Icon */}
                     <div className="flex-shrink-0">
                       <div className="inline-flex rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">
-                        <tutorial.icon size={24} className="text-accent" />
+                        <tutorial.icon size={24} className="text-accent-text" />
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="min-w-0 flex-1">
                       <div className="mb-1 flex flex-wrap items-center gap-3">
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                        <h3 className="text-lg font-semibold text-foreground group-hover:text-accent-text transition-colors">
                           {tutorial.title}
                         </h3>
                         <span
                           className={cn(
                             "rounded-full border px-2 py-0.5 text-xs font-medium",
-                            difficultyColors[tutorial.difficulty],
+                            difficultyColors[tutorial.difficulty]
                           )}
                         >
                           {tutorial.difficulty}
@@ -77,7 +77,7 @@ export function TutorialsContent() {
                       </span>
                       <ArrowRight
                         size={16}
-                        className="text-muted transition-transform group-hover:translate-x-1 group-hover:text-accent"
+                        className="text-muted transition-transform group-hover:translate-x-1 group-hover:text-accent-text"
                       />
                     </div>
                   </article>

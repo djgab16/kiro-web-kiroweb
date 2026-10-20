@@ -103,7 +103,7 @@ export function FeaturesContent() {
                 custom={i}
               >
                 <div className="mb-4 inline-flex rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">
-                  <feature.icon size={24} className="text-accent" />
+                  <feature.icon size={24} className="text-accent-text" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {feature.title}

@@ -97,7 +97,7 @@ export function HomeContent() {
             variants={fadeUp}
             custom={0}
           >
-            <Sparkles size={14} className="text-accent" />
+            <Sparkles size={14} className="text-accent-text" />
             AI-powered development, redefined
           </motion.p>
 
@@ -107,7 +107,9 @@ export function HomeContent() {
             custom={1}
           >
             Build software with
-            <span className="block text-accent">specification-driven AI</span>
+            <span className="block text-accent-text">
+              specification-driven AI
+            </span>
           </motion.h1>
 
           <motion.p
@@ -173,8 +175,8 @@ export function HomeContent() {
                     visible: { opacity: 1 },
                   }}
                 >
-                  <span className="text-accent">$</span> kiro spec &quot;Add
-                  user authentication with OAuth&quot;
+                  <span className="text-accent-text">$</span> kiro spec
+                  &quot;Add user authentication with OAuth&quot;
                 </motion.p>
                 <motion.p
                   className="text-green-400"
@@ -193,8 +195,8 @@ export function HomeContent() {
                     visible: { opacity: 1 },
                   }}
                 >
-                  <span className="text-accent">{">"}</span> Created 3 tasks, 12
-                  files planned
+                  <span className="text-accent-text">{">"}</span> Created 3
+                  tasks, 12 files planned
                 </motion.p>
                 <motion.p
                   className="text-green-400"
@@ -213,8 +215,8 @@ export function HomeContent() {
                     visible: { opacity: 1 },
                   }}
                 >
-                  <span className="text-accent">{">"}</span> PR #47 ready for
-                  review
+                  <span className="text-accent-text">{">"}</span> PR #47 ready
+                  for review
                 </motion.p>
               </motion.div>
             </div>
@@ -256,7 +258,7 @@ export function HomeContent() {
                 custom={i}
               >
                 <div className="mb-4 inline-flex rounded-lg bg-accent-glow p-3">
-                  <feature.icon size={24} className="text-accent" />
+                  <feature.icon size={24} className="text-accent-text" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {feature.title}

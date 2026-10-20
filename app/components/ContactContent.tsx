@@ -167,7 +167,7 @@ export function ContactContent() {
                 custom={i}
               >
                 <div className="inline-flex shrink-0 rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">
-                  <link.icon size={20} className="text-accent" />
+                  <link.icon size={20} className="text-accent-text" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">{link.name}</h3>

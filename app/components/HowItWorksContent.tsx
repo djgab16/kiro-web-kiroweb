@@ -98,14 +98,14 @@ export function HowItWorksContent() {
                   >
                     {/* Step number circle */}
                     <div className="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface-elevated">
-                      <span className="text-sm font-bold text-accent">
+                      <span className="text-sm font-bold text-accent-text">
                         {step.number}
                       </span>
                     </div>
 
                     <div className="glass rounded-xl border border-border p-6">
                       <div className="mb-3 inline-flex rounded-lg bg-accent-glow p-2">
-                        <step.icon size={20} className="text-accent" />
+                        <step.icon size={20} className="text-accent-text" />
                       </div>
                       <h3 className="text-lg font-semibold text-foreground">
                         {step.title}
@@ -139,7 +139,7 @@ export function HowItWorksContent() {
                   >
                     {/* Step number circle */}
                     <div className="relative z-10 mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface-elevated">
-                      <span className="text-sm font-bold text-accent">
+                      <span className="text-sm font-bold text-accent-text">
                         {step.number}
                       </span>
                     </div>
@@ -151,7 +151,7 @@ export function HowItWorksContent() {
 
                     <div className="glass w-full rounded-xl border border-border p-4">
                       <div className="mb-3 inline-flex rounded-lg bg-accent-glow p-2">
-                        <step.icon size={20} className="text-accent" />
+                        <step.icon size={20} className="text-accent-text" />
                       </div>
                       <h3 className="text-sm font-semibold text-foreground">
                         {step.title}

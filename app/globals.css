@@ -14,6 +14,10 @@
   --accent: #b9a3ff;
   --accent-hover: #a78bfa;
   --accent-foreground: #241b3d;
+  /* Readable accent used as a TEXT/icon color on the page background
+     (vs --accent, which is a fill color). In dark mode the pastel accent
+     already clears WCAG AA on the dark background, so they match here. */
+  --accent-text: #b9a3ff;
   --accent-glow: rgba(185, 163, 255, 0.18);
   --glass-bg: rgba(35, 29, 51, 0.8);
   --glass-border: rgba(255, 255, 255, 0.08);
@@ -30,6 +34,10 @@
   --accent: #a78bfa;
   --accent-hover: #9578f0;
   --accent-foreground: #241b3d;
+  /* Light-mode accent text is a deeper lavender so accent-colored text and
+     meaningful icons meet WCAG AA (>=4.5:1) on the light background/surface;
+     the pastel --accent is reserved for fills/borders/glows. */
+  --accent-text: #6d49d9;
   --accent-glow: rgba(167, 139, 250, 0.18);
   --glass-bg: rgba(255, 255, 255, 0.75);
   --glass-border: rgba(0, 0, 0, 0.06);
@@ -46,6 +54,7 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-text: var(--accent-text);
   --color-accent-glow: var(--accent-glow);
   --color-glass-bg: var(--glass-bg);
   --color-glass-border: var(--glass-border);
