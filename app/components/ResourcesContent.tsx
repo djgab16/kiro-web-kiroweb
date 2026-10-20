@@ -192,8 +192,8 @@ export function ResourcesContent() {
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-all",
                   activeCategory === category
-                    ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "border border-border bg-surface text-muted hover:border-border-hover hover:text-foreground",
+                    ? "bg-accent text-accent-foreground shadow-lg shadow-accent/20"
+                    : "border border-border bg-surface text-muted hover:border-border-hover hover:text-foreground"
                 )}
                 aria-pressed={activeCategory === category}
               >

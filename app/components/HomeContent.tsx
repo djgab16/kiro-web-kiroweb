@@ -115,8 +115,8 @@ export function HomeContent() {
             variants={fadeUp}
             custom={2}
           >
-            Kiro transforms how you develop software. From natural language specs
-            to production-ready code, experience the full lifecycle of
+            Kiro transforms how you develop software. From natural language
+            specs to production-ready code, experience the full lifecycle of
             AI-assisted development.
           </motion.p>
 
@@ -127,7 +127,7 @@ export function HomeContent() {
           >
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
             >
               Get Started
               <ArrowRight size={16} />
@@ -236,8 +236,8 @@ export function HomeContent() {
               Everything you need to ship faster
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              From specification to deployment, Kiro handles the heavy lifting so
-              you can focus on what matters.
+              From specification to deployment, Kiro handles the heavy lifting
+              so you can focus on what matters.
             </p>
           </motion.div>
 
@@ -261,9 +261,7 @@ export function HomeContent() {
                 <h3 className="text-lg font-semibold text-foreground">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted">
-                  {feature.description}
-                </p>
+                <p className="mt-2 text-sm text-muted">{feature.description}</p>
               </motion.article>
             ))}
           </motion.div>
@@ -337,7 +335,7 @@ export function HomeContent() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
             >
               Install Kiro
               <ArrowRight size={16} />

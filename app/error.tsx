@@ -34,14 +34,12 @@ export default function Error({
         page.
       </p>
       {error.digest && (
-        <p className="mt-2 text-xs text-muted">
-          Error ID: {error.digest}
-        </p>
+        <p className="mt-2 text-xs text-muted">Error ID: {error.digest}</p>
       )}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <button
           onClick={reset}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
         >
           <RotateCcw className="h-4 w-4" aria-hidden="true" />
           Try Again

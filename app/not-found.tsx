@@ -3,8 +3,7 @@ import { createPageMeta } from "./lib/metadata";
 
 export const metadata = createPageMeta({
   title: "Page Not Found",
-  description:
-    "The page you are looking for does not exist or has been moved.",
+  description: "The page you are looking for does not exist or has been moved.",
 });
 
 export default function NotFound() {
@@ -25,7 +24,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="mt-8 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        className="mt-8 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
       >
         Back to Home
       </Link>
