@@ -97,7 +97,7 @@ export function HomeContent() {
             variants={fadeUp}
             custom={0}
           >
-            <Sparkles size={14} className="text-accent" />
+            <Sparkles size={14} className="text-accent-text" />
             AI-powered development, redefined
           </motion.p>
 
@@ -107,7 +107,9 @@ export function HomeContent() {
             custom={1}
           >
             Build software with
-            <span className="block text-accent">specification-driven AI</span>
+            <span className="block text-accent-text">
+              specification-driven AI
+            </span>
           </motion.h1>
 
           <motion.p
@@ -115,8 +117,8 @@ export function HomeContent() {
             variants={fadeUp}
             custom={2}
           >
-            Kiro transforms how you develop software. From natural language specs
-            to production-ready code, experience the full lifecycle of
+            Kiro transforms how you develop software. From natural language
+            specs to production-ready code, experience the full lifecycle of
             AI-assisted development.
           </motion.p>
 
@@ -127,7 +129,7 @@ export function HomeContent() {
           >
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
             >
               Get Started
               <ArrowRight size={16} />
@@ -173,8 +175,8 @@ export function HomeContent() {
                     visible: { opacity: 1 },
                   }}
                 >
-                  <span className="text-accent">$</span> kiro spec &quot;Add
-                  user authentication with OAuth&quot;
+                  <span className="text-accent-text">$</span> kiro spec
+                  &quot;Add user authentication with OAuth&quot;
                 </motion.p>
                 <motion.p
                   className="text-green-400"
@@ -193,8 +195,8 @@ export function HomeContent() {
                     visible: { opacity: 1 },
                   }}
                 >
-                  <span className="text-accent">{">"}</span> Created 3 tasks, 12
-                  files planned
+                  <span className="text-accent-text">{">"}</span> Created 3
+                  tasks, 12 files planned
                 </motion.p>
                 <motion.p
                   className="text-green-400"
@@ -213,8 +215,8 @@ export function HomeContent() {
                     visible: { opacity: 1 },
                   }}
                 >
-                  <span className="text-accent">{">"}</span> PR #47 ready for
-                  review
+                  <span className="text-accent-text">{">"}</span> PR #47 ready
+                  for review
                 </motion.p>
               </motion.div>
             </div>
@@ -236,8 +238,8 @@ export function HomeContent() {
               Everything you need to ship faster
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              From specification to deployment, Kiro handles the heavy lifting so
-              you can focus on what matters.
+              From specification to deployment, Kiro handles the heavy lifting
+              so you can focus on what matters.
             </p>
           </motion.div>
 
@@ -256,14 +258,12 @@ export function HomeContent() {
                 custom={i}
               >
                 <div className="mb-4 inline-flex rounded-lg bg-accent-glow p-3">
-                  <feature.icon size={24} className="text-accent" />
+                  <feature.icon size={24} className="text-accent-text" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted">
-                  {feature.description}
-                </p>
+                <p className="mt-2 text-sm text-muted">{feature.description}</p>
               </motion.article>
             ))}
           </motion.div>
@@ -337,7 +337,7 @@ export function HomeContent() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
             >
               Install Kiro
               <ArrowRight size={16} />

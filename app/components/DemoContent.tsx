@@ -248,11 +248,11 @@ export function DemoContent() {
 
   const goNext = useCallback(
     () => setCurrentStep((prev) => Math.min(prev + 1, demoStages.length - 1)),
-    [],
+    []
   );
   const goPrev = useCallback(
     () => setCurrentStep((prev) => Math.max(prev - 1, 0)),
-    [],
+    []
   );
 
   const handleKeyDown = useCallback(
@@ -265,7 +265,7 @@ export function DemoContent() {
         goPrev();
       }
     },
-    [goNext, goPrev],
+    [goNext, goPrev]
   );
 
   return (
@@ -300,13 +300,15 @@ export function DemoContent() {
                 className={cn(
                   "flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all sm:text-sm",
                   i === currentStep
-                    ? "border border-accent bg-accent-glow text-accent"
-                    : "border border-border text-muted hover:border-border-hover hover:text-foreground",
+                    ? "border border-accent bg-accent-glow text-accent-text"
+                    : "border border-border text-muted hover:border-border-hover hover:text-foreground"
                 )}
                 aria-current={i === currentStep ? "step" : undefined}
               >
                 <stage.icon size={14} />
-                <span className="hidden sm:inline">{stage.title.split(". ")[1]}</span>
+                <span className="hidden sm:inline">
+                  {stage.title.split(". ")[1]}
+                </span>
                 <span className="sm:hidden">{i + 1}</span>
               </button>
             ))}
@@ -341,7 +343,7 @@ export function DemoContent() {
                   <div className="mb-4 flex items-center gap-3">
                     {(() => {
                       const Icon = currentStage.icon;
-                      return <Icon size={24} className="text-accent" />;
+                      return <Icon size={24} className="text-accent-text" />;
                     })()}
                     <h2 className="text-xl font-semibold text-foreground">
                       {currentStage.title}
@@ -384,7 +386,7 @@ export function DemoContent() {
                 type="button"
                 onClick={goNext}
                 disabled={currentStep === demoStages.length - 1}
-                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-accent transition-colors hover:text-accent-hover disabled:opacity-30 disabled:hover:text-accent"
+                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-accent-text transition-colors hover:text-accent-hover disabled:opacity-30 disabled:hover:text-accent-text"
                 aria-label="Next step"
                 aria-describedby="demo-next-desc"
               >

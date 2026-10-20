@@ -19,7 +19,7 @@ export function TutorialDetailContent({ title }: TutorialDetailContentProps) {
         >
           <Link
             href="/tutorials"
-            className="mb-8 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+            className="mb-8 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent-text"
           >
             <ArrowLeft size={16} />
             Back to Tutorials
@@ -27,7 +27,7 @@ export function TutorialDetailContent({ title }: TutorialDetailContentProps) {
 
           <div className="glass mt-6 rounded-2xl border border-border p-8 text-center sm:p-12">
             <div className="mb-6 inline-flex rounded-xl bg-accent-glow p-4">
-              <BookOpen size={32} className="text-accent" />
+              <BookOpen size={32} className="text-accent-text" />
             </div>
             <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
               {title}

@@ -80,11 +80,12 @@ export function AboutContent() {
                 delightful.
               </p>
               <p>
-                Traditional AI coding tools offer suggestions one line at a time.
-                They lack the big-picture understanding needed to build cohesive
-                software systems. Kiro takes a fundamentally different approach:
-                it starts with your intent, creates a structured plan, and
-                executes across your entire codebase with full context awareness.
+                Traditional AI coding tools offer suggestions one line at a
+                time. They lack the big-picture understanding needed to build
+                cohesive software systems. Kiro takes a fundamentally different
+                approach: it starts with your intent, creates a structured plan,
+                and executes across your entire codebase with full context
+                awareness.
               </p>
               <p>
                 Our goal is to eliminate the gap between what you want to build
@@ -131,7 +132,7 @@ export function AboutContent() {
                 custom={i}
               >
                 <div className="mb-4 inline-flex rounded-lg bg-accent-glow p-3">
-                  <point.icon size={24} className="text-accent" />
+                  <point.icon size={24} className="text-accent-text" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {point.title}
@@ -160,9 +161,9 @@ export function AboutContent() {
             <div className="mt-8 space-y-6 text-lg text-muted">
               <p>
                 AI chatbots respond to prompts. They answer questions, generate
-                snippets, and offer suggestions. But they operate without memory,
-                without awareness of your full project, and without a structured
-                approach to multi-step development.
+                snippets, and offer suggestions. But they operate without
+                memory, without awareness of your full project, and without a
+                structured approach to multi-step development.
               </p>
               <p>
                 Kiro is different. It is an integrated development partner that:

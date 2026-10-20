@@ -192,8 +192,8 @@ export function ResourcesContent() {
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-all",
                   activeCategory === category
-                    ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "border border-border bg-surface text-muted hover:border-border-hover hover:text-foreground",
+                    ? "bg-accent text-accent-foreground shadow-lg shadow-accent/20"
+                    : "border border-border bg-surface text-muted hover:border-border-hover hover:text-foreground"
                 )}
                 aria-pressed={activeCategory === category}
               >
@@ -221,7 +221,7 @@ export function ResourcesContent() {
                 >
                   <div className="mb-4 flex items-center justify-between">
                     <div className="inline-flex rounded-lg bg-accent-glow p-3 transition-colors group-hover:bg-accent/20">
-                      <Icon size={20} className="text-accent" />
+                      <Icon size={20} className="text-accent-text" />
                     </div>
                     <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-muted">
                       {resource.category}
@@ -242,7 +242,7 @@ export function ResourcesContent() {
                       href={resource.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent-text transition-colors hover:text-accent-hover"
                     >
                       View Resource
                       <ExternalLink size={14} />

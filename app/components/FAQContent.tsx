@@ -7,13 +7,7 @@ import { useState } from "react";
 import { faqItems, type FAQItem } from "@/app/lib/faq";
 import { PageHero } from "./PageHero";
 
-function FAQAccordionItem({
-  item,
-  index,
-}: {
-  item: FAQItem;
-  index: number;
-}) {
+function FAQAccordionItem({ item, index }: { item: FAQItem; index: number }) {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = `faq-panel-${index}`;
   const buttonId = `faq-button-${index}`;
@@ -30,7 +24,7 @@ function FAQAccordionItem({
         id={buttonId}
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-accent"
+        className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-accent-text"
         aria-expanded={isOpen}
         aria-controls={panelId}
       >
